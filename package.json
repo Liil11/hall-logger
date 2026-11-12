@@ -1,0 +1,14 @@
+{
+  "name": "hall-logger",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm run dev:web && npm run dev:pb",
+    "dev:web": "npm --prefix frontend run dev",
+    "dev:pb": "backend/bin/pocketbase serve --dev --dir=backend/pb_data --migrationsDir=backend/pb_migrations --hooksDir=backend/pb_hooks --http=127.0.0.1:8090",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "pb:migrate": "backend/bin/pocketbase migrate up --dir=backend/pb_data --migrationsDir=backend/pb_migrations",
+    "pb:update": "backend/bin/pocketbase update"
+  }
+}
