@@ -686,13 +686,21 @@ const HallDetailPage = ({ hallId }: { hallId: string }) => {
                     : "Tanggal selesai tidak boleh sebelum tanggal mulai."}
                 </p>
               </>
-            ) : (
+            ) : !editing ? (
               <DateSelects
                 label="Tanggal"
                 value={form.date}
                 onChange={(key) => setForm((prev) => ({ ...prev, date: key }))}
               />
-            )}
+            ) : (
+              <div className="min-w-0">
+                <label className="flex flex-1 flex-col gap-1.5 text-xs font-semibold text-slate-700">Tanggal</label>
+                <p className="truncate text-sm font-semibold text-slate-900">
+                  {formatDateKey(selectedKey)}
+                </p>
+              </div>
+            )
+            }
 
             <div className="flex gap-3">
               <label className="flex flex-1 flex-col gap-1.5 text-xs font-semibold text-slate-700">
