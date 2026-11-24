@@ -83,7 +83,3 @@ Adjacent slots (10:00-13:00 then 13:00-15:00) are allowed.
 Admins can manage halls and schedules from the app UI after login. Admin
 accounts themselves are created from the PocketBase dashboard.
 
-
-this is test new new feature to be implemented
-
-add cron jobs to delete event after one month 
