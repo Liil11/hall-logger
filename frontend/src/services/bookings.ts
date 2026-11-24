@@ -51,6 +51,10 @@ export const bookingsService = {
     }),
   create: (data: BookingInput) =>
     pb.collection("bookings").create<BookingRecord>(data, { expand: "hall" }),
+  update: (
+    id: string,
+    data: Partial<Pick<Booking, "title" | "dateKey" | "start" | "end" | "status">>
+  ) => pb.collection("bookings").update<BookingRecord>(id, data, { expand: "hall" }),
   setStatus: (id: string, status: BookingStatus) =>
     pb.collection("bookings").update<BookingRecord>(id, { status }, { expand: "hall,user" }),
   remove: (id: string) => pb.collection("bookings").delete(id),
